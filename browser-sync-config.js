@@ -3,9 +3,9 @@ module.exports = {
   server: {
     baseDir: "./",
     serveStaticOptions: {
-      extensions: ["html"],
-    },
+      extensions: ["html"]
+    }
   },
-  files: "./",
-  ignore: ["./node_modules/*"],
+  files: ["./*.html", "./assets/**/*.{css,js}"], // watch only your files
+  ignore: ["./node_modules/**/*"]                // ignore node_modules
 };

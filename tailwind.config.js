@@ -1,8 +1,15 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  content: ["./**/*.html"],
+  // Only scan your project files, avoid node_modules
+  content: [
+    "./*.html",               // root HTML files
+    "./assets/**/*.html",     // HTML files in assets folder
+    "./assets/**/*.js",       // JS files (for Tailwind class usage)
+  ],
+
   safelist: ["active"],
+
   theme: {
     fontFamily: {
       header: ["Raleway", "sans-serif"],
@@ -95,6 +102,7 @@ module.exports = {
       },
     },
   },
+
   plugins: [
     require("@tailwindcss/typography"),
     require("@tailwindcss/forms"),
